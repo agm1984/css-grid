@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../assets/style.css">
+        <title>Portfolio sidebar</title>
+    </head>
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 1024px;
+            display: grid;
+            grid-gap: 16px;
+            grid-template-columns: 3fr 1fr;
+            grid-auto-rows: fit-content(1em);
+            /* align-items: start; */
+            grid-template-areas:
+                "heading heading"
+                "main links"
+                "main tags"
+                "main .";
+        }
+
+        @media screen and (max-width: 720px) {
+            .container {
+                grid-template-areas:
+                "heading heading"
+                "links links"
+                "main main"
+                "tags tags";
+            }
+        }
+
+        h1 {
+            grid-column: 1 / -1;
+            margin: 0;
+        }
+
+        .main {
+            padding: 16px;
+            background-color: white;
+            grid-area: main;
+        }
+
+        .image__container {
+            display: grid;
+            grid-gap: 16px;
+            grid-template-columns: repeat(auto-fit, minmax(256px, 1fr));
+        }
+
+        img {
+            width: 100%;
+        }
+
+        .links {
+            display: flex;
+            flex-direction: column;
+            background-color: white;
+            grid-area: links;
+            padding: 16px;
+        }
+
+        .tags {
+            background-color: white;
+            grid-area: tags;
+            padding: 16px;
+        }
+    </style>
+
+    <body>
+        <div class="container">
+            <h1>CommuniHelp</h1>
+
+            <div class="main">
+                <h2>Summary</h2>
+                <p>
+                    This project features logic from a book called 'Design Patterns: Elements of Reusable Object-Oriented Software.'
+                    The app's routing was inspired by the Flyweight Pattern. I recommend taking a look at the Frontend code base
+                    if you have a couple minutes available for research.
+                </p>
+
+                <h2 style="padding-top: 32px">Images</h2>
+                <div class="image__container">
+                    <img src="data:image/jpeg;base64,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" alt="">
+                    <img src="https://source.unsplash.com/random/201x201" alt="">
+                    <img src="https://source.unsplash.com/random/202x202" alt="">
+                    <img src="https://source.unsplash.com/random/203x203" alt="">
+                    <img src="https://source.unsplash.com/random/204x204" alt="">
+                    <img src="https://source.unsplash.com/random/205x205" alt="">
+                    <img src="https://source.unsplash.com/random/206x206" alt="">
+                    <img src="https://source.unsplash.com/random/207x207" alt="">
+                    <img src="https://source.unsplash.com/random/207x208" alt="">
+                    <img src="https://source.unsplash.com/random/207x209" alt="">
+                    <img src="https://source.unsplash.com/random/207x210" alt="">
+                </div>
+
+                <h2 style="padding-top: 32px">Conclusion</h2>
+                <p>
+                    A rapidly growing skill and passion of mine is UI interactions during application events and state-changes.
+                    When I see things move in the browser, I see the mathematical art of motion tweens. In web browsers,
+                    there is a thing called jank. The nature of a render loop makes certain things expensive. It takes specific
+                    focus to ensure animations are buttery smooth across all devices that might encounter them. It also takes
+                    specific focus to account for Web Accessibility.
+                </p>
+            </div>
+
+            <div class="links">
+                <h2>Links</h2>
+                <button>View backend source</button>
+                <button>View frontend source</button>
+            </div>
+
+            <div class="tags">
+                <h2>Tags</h2>
+                <span>JavaScript</span>
+                <span>PHP</span>
+                <span>Golf</span>
+                <span>Hockey</span>
+                <span>Basketball</span>
+                <span>React JS</span>
+                <span>Vue JS</span>
+            </div>
+
+        </div>
+    </body>
+</html>
